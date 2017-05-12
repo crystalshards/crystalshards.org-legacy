@@ -1,11 +1,16 @@
 name: crystalshards
 version: 0.2.0
 author: Fatih Kadir Akın
+crystal: 0.22.0
+
+targets:
+  web:
+    main: ./app.cr
 
 dependencies:
   kemal:
     github: sdogruyol/kemal
-    version: 0.17.4
+    version: 0.19.0
   emoji:
     github: veelenga/emoji.cr
     version: 0.2.0

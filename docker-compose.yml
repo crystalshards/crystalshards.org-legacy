@@ -1,0 +1,9 @@
+version: "3"
+services:
+  app:
+    build: .
+    environment:
+      GITHUB_USER: 1
+      GITHUB_KEY: 1
+    ports:
+      - '3000:3000'

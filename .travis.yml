@@ -1,0 +1,5 @@
+language: crystal
+crystal: latest
+deploy:
+  provider: script
+  script: psykube apply default
