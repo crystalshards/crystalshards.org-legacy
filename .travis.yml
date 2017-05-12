@@ -1,5 +1,7 @@
-language: crystal
+language: bash
 crystal: latest
+services:
+  - docker
 before_deploy:
   # Install Psykube
   - export PSYKUBE_RELEASES_URL=https://api.github.com/repos/commercialtribe/psykube/releases/latest
