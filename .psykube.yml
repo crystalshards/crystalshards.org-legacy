@@ -16,3 +16,5 @@ ingress:
   tls: true
   host: crystalshards.org
 healthcheck: true
+ports:
+  http: 3000
