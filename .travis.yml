@@ -1,8 +1,14 @@
 language: bash
 crystal: latest
+env:
+  global:
+    - CLOUDSDK_CONTAINER_USE_CLIENT_CERTIFICATE=True
 services:
   - docker
 before_deploy:
+  # Docker Auth
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
   # Install Psykube
   - export PSYKUBE_RELEASES_URL=https://api.github.com/repos/commercialtribe/psykube/releases/latest
   - export PSYKUBE_DOWNLOAD_URL=`curl -sSL $PSYKUBE_RELEASES_URL | jq -r '.assets[] | select(.name | contains("linux")).browser_download_url'`
