@@ -8,6 +8,8 @@ targets:
     main: ./src/web.cr
 
 dependencies:
+  promise:
+    github: jwaldrip/promise.cr
   mime-types:
     github: jwaldrip/mime-types.cr
   kemal:

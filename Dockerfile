@@ -7,13 +7,14 @@ RUN apt-get install curl -y
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install nodejs -y
 WORKDIR /build
-ADD package.json shard.yml shard.lock /build/
+ADD gulpfile.js package.json shard.yml shard.lock /build/
 RUN shards install
 RUN npm install
 
 # Build
-COPY . /build
+COPY ./assets /build/assets
 RUN npm run build
+COPY . /build
 RUN shards build --release
 RUN mv ./bin/web /usr/local/bin/web
 

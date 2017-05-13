@@ -33,7 +33,7 @@ class GithubRepo
   end
 
   def latest_release
-    VERSION_CACHE.fetch("version_#{full_name}") do
+    VERSION_CACHE.fetch_lazily("version_#{full_name}", "?") do
       client = HTTP::Client.new("api.github.com", 443, true)
       client.basic_auth ENV["GITHUB_USER"], ENV["GITHUB_KEY"]
       headers = HTTP::Headers.new

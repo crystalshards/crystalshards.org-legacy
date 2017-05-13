@@ -24,6 +24,10 @@ shards:
     github: jwaldrip/mime-types.cr
     version: 0.12.1
 
+  promise:
+    github: jwaldrip/promise.cr
+    version: 1.0.0
+
   radix:
     github: luislavena/radix
     version: 0.3.8
