@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 var refreshBrowser = browserSync.reload,
     src = "./assets/",
-    dist = "./public/",
+    dist = "./static/",
     filesScript = [
         src + "js/lib/jquery.min.js",
         src + "js/main.js"

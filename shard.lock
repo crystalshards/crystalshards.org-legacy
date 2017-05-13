@@ -1,5 +1,9 @@
 version: 1.0
 shards:
+  baked_file_system:
+    github: schovi/baked_file_system
+    version: 0.9.4
+
   emoji:
     github: veelenga/emoji.cr
     version: 0.2.0
@@ -15,6 +19,10 @@ shards:
   kilt:
     github: jeromegn/kilt
     version: 0.3.3
+
+  mime-types:
+    github: jwaldrip/mime-types.cr
+    version: 0.12.1
 
   radix:
     github: luislavena/radix

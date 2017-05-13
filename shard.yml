@@ -8,6 +8,8 @@ targets:
     main: ./src/web.cr
 
 dependencies:
+  mime-types:
+    github: jwaldrip/mime-types.cr
   kemal:
     github: sdogruyol/kemal
     version: 0.19.0
@@ -16,3 +18,5 @@ dependencies:
     version: 0.2.0
   faker:
     github: askn/faker
+  baked_file_system:
+    github: schovi/baked_file_system

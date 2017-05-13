@@ -2,16 +2,17 @@ FROM crystallang/crystal:0.22.0
 
 # Deps
 ENV NPM_CONFIG_LOGLEVEL warn
-ENV EXLUDE_DOCKER true
 RUN apt-get update
 RUN apt-get install curl -y
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install nodejs -y
-ADD . /build
 WORKDIR /build
+ADD package.json shard.yml shard.lock /build/
+RUN shards install
+RUN npm install
 
 # Build
-RUN npm install
+COPY . /build
 RUN shards build --release
 RUN mv ./bin/web /usr/local/bin/web
 

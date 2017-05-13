@@ -1,5 +1,7 @@
+require "baked_file_system"
 require "faker"
 require "kemal"
+require "mime-types"
 require "http/client"
 require "json"
 require "emoji"
@@ -14,13 +16,25 @@ TRENDING_CACHE  = TimeCache(String, GithubRepos).new(30.minutes)
 POPULAR_CACHE   = TimeCache(String, GithubRepos).new(30.minutes)
 RECENTLY_CACHE  = TimeCache(String, GithubRepos).new(30.minutes)
 
-NAMES = JSON.parse(File.read("./misc/names.json"))
-
 def headers
   headers = HTTP::Headers.new
   headers["User-Agent"] = "crystalshards"
   headers
 end
+
+class BakedPublic < Kemal::Handler
+  BakedFileSystem.load("../static", __DIR__)
+
+  def call(context)
+    file = self.class.get(context.request.path)
+    context.response.headers["content-type"] = MIME::Types.type_for(context.request.path).to_a.first.to_s
+    file.write_to_io(context.response, false)
+  rescue BakedFileSystem::NoSuchFileError
+    call_next context
+  end
+end
+
+add_handler BakedPublic.new
 
 def crystal_repos(word = "", sort = "stars", page = 1, limit = 100, after_date = 1.years.ago)
   client = HTTP::Client.new("api.github.com", 443, true)
@@ -70,7 +84,7 @@ end
 
 get "/name" do |env|
   prefix = [Faker::Hacker.ingverb, Faker::Hacker.adjective, Faker::Commerce.color].sample
-  random_name = [prefix, Faker::Hacker.noun].join("_").sub(/[-_]/, "_").downcase.lchop("_")
+  random_name = [prefix, Faker::Hacker.noun].join("_").sub(/[-_\s]/, "_").downcase.lchop("_")
   random_name = "#{Faker::Commerce.color}_#{random_name}" if random_name =~ /^\d/
   if env.request.headers["Accept"] == "*/*"
     random_name
