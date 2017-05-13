@@ -40,17 +40,5 @@ gulp.task('script', function () {
         .pipe(gulp.dest(dist + "src/"))
 });
 
-
-gulp.task("watch", ["style", "script"], function () {
-    browserSync.init({
-        notify: false,
-        proxy: "localhost:3000"
-    });
-    gulp.watch(src + 'css/**/*.scss', ["style"]);
-    gulp.watch(src + 'js/main.js', ["script", refreshBrowser]);
-    gulp.watch(dist + "**/*.ecr").on("change", refreshBrowser);
-});
-
-
-gulp.task("default", ["watch"]);
 gulp.task("export", ["style", "script"]);
+gulp.task("default", ["export"]);

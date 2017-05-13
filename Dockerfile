@@ -13,6 +13,7 @@ RUN npm install
 
 # Build
 COPY . /build
+RUN npm run build
 RUN shards build --release
 RUN mv ./bin/web /usr/local/bin/web
 

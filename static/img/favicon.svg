@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>shards-logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-1" transform="translate(-202.000000, -24.000000)">
+            <g id="Header">
+                <rect id="bg" fill="#736380" x="0" y="0" width="1200" height="90"></rect>
+                <g id="Logo" transform="translate(203.000000, 25.000000)">
+                    <g id="shards-logo" transform="translate(6.000000, 3.000000)">
+                        <path d="M14.3912177,3.3679124 C14.672207,2.88857762 15.127456,2.88802363 15.4087701,3.3679124 L31.3912177,30.6320876 C31.672207,31.1114224 31.4450696,31.5 30.9008518,31.5 L-1.10086397,31.5 C-1.65267493,31.5 -1.87254398,31.1119764 -1.59122987,30.6320876 L14.3912177,3.3679124 Z" id="Triangle-1" fill="#FFFFFF" transform="translate(14.899994, 17.000000) rotate(-270.000000) translate(-14.899994, -17.000000) "></path>
+                        <path d="M11.6418457,17.9678955 L4.42608644,29.3156125 L24.0509033,17.9678955 L11.6418457,17.9678955 Z" id="Path-5" fill="#94EAD7"></path>
+                        <path d="M10.0787964,17.0175171 L2.4576416,28.8677979 L2.4576416,5.16723633 L10.0787964,17.0175171 Z" id="Path-6" fill="#D7FBF3" opacity="0.883162313"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

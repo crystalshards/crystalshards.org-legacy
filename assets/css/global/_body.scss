@@ -79,7 +79,7 @@
 
   &_title {
     font-size: toRem(20px);
-    color: $color-green;
+    color: $color-purple;
 
     a:hover {
       text-decoration: underline;
@@ -244,7 +244,7 @@
         width: 3px;
         margin-left: 2px;
         height: 120%;
-        background-color: $color-green;
+        background-color: $color-purple;
         animation: blink .6s infinite alternate;
       }
     }
