@@ -45,5 +45,5 @@ class Views::Index
     end
   end
 
-  ECR.def_to_s "./views/index.ecr"
+  ECR.def_to_s "#{__DIR__}/index.ecr"
 end

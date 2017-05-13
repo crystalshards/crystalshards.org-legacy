@@ -4,6 +4,10 @@ shards:
     github: veelenga/emoji.cr
     version: 0.2.0
 
+  faker:
+    github: askn/faker
+    version: 0.3.0
+
   kemal:
     github: sdogruyol/kemal
     version: 0.19.0

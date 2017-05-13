@@ -1,3 +1,4 @@
+require "faker"
 require "kemal"
 require "http/client"
 require "json"
@@ -68,11 +69,13 @@ get "/" do |env|
 end
 
 get "/name" do |env|
-  random_name = NAMES.as_a.sample
+  prefix = [Faker::Hacker.ingverb, Faker::Hacker.adjective, Faker::Commerce.color].sample
+  random_name = [prefix, Faker::Hacker.noun].join("_").sub(/[-_]/, "_").downcase.lchop("_")
+  random_name = "#{Faker::Commerce.color}_#{random_name}" if random_name =~ /^\d/
   if env.request.headers["Accept"] == "*/*"
     random_name
   else
-    render "views/name.ecr"
+    render "#{__DIR__}/views/name.ecr"
   end
 end
 
