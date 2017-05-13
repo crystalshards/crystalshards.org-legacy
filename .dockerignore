@@ -6,5 +6,5 @@ lib
 node_modules
 .shards
 bin
-/public/src
-/static
+public/src
+static/src
