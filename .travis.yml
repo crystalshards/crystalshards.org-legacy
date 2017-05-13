@@ -7,7 +7,7 @@ services:
   - docker
 before_deploy:
   # Docker Auth
-  - echo $DOCKER_USERNAME
+  - docker login --username="$DOCKER_USERNAME" --password="$DOCKER_PASSWORD"
 
   # Install Psykube
   - export PSYKUBE_RELEASES_URL=https://api.github.com/repos/commercialtribe/psykube/releases/latest
