@@ -17,6 +17,8 @@ ingress:
   host: crystalshards.org
   annotations:
     ingress.kubernetes.io/force-ssl-redirect: "true"
-healthcheck: true
+healthcheck:
+  http: /health
 ports:
   http: 3000
+replicas: 3

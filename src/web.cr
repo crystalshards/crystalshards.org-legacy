@@ -82,6 +82,10 @@ get "/" do |env|
   main env
 end
 
+get "/health" do
+  "OK"
+end
+
 get "/name" do |env|
   prefix = [Faker::Hacker.ingverb, Faker::Hacker.adjective, Faker::Commerce.color].sample
   random_name = [prefix, Faker::Hacker.noun].join("_").sub(/[-_\s]/, "_").downcase.lchop("_")
