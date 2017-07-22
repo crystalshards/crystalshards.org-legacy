@@ -1,0 +1,54 @@
+@import url($font-face-url);
+
+html {
+  font-family: $font-sans;
+  font-weight: 400;
+  font-size: $fonts-size;
+  line-height: 1;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a, button {
+  transition: $transition;
+}
+
+pre, code {
+  font-family: $font-mono;
+  line-height:1.2;
+}
+
+mark {
+  padding: 2px;
+  color: inherit;
+  background-color: rgba(yellow, .4);
+}
+
+::selection {
+  background-color: rgba(saturate($color-purple, 40), .15);
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.width {
+  max-width: $container-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $padding;
+  padding-left: $padding;
+}

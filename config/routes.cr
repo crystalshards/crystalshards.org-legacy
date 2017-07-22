@@ -12,10 +12,9 @@ Amber::Server.instance.config do |app|
 
   routes :web do
     get "/", HomeController, :index
-    get "/*", HomeController, :index
   end
 
   routes :static do
-    get "/assets/*", StaticController, :index
+    get "/*", StaticController, :index
   end
 end

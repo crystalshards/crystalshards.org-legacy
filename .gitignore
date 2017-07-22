@@ -2,6 +2,7 @@
 /libs/
 /lib/
 /.crystal/
+/bin
 /.shards/
 .env
-/crystalshards
+/public/assets/stylesheets

@@ -40,6 +40,10 @@ shards:
     github: stefanwille/crystal-redis
     version: 1.8.0
 
+  sass:
+    github: straight-shoota/sass.cr
+    commit: f0c488a51cb84dcc5a1854421dd2a60b3d409b65
+
   slang:
     github: jeromegn/slang
     commit: b817c89c7e5ae39562710c0d6c7f42cee685e14f

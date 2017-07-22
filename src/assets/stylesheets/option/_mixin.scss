@@ -1,0 +1,9 @@
+@function toRem($size) {
+  @return #{$size / $fonts-size}rem;
+}
+
+@mixin desktop() {
+  @media only screen and (min-width: 700px) {
+    @content;
+  }
+}

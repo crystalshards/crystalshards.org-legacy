@@ -1,0 +1,269 @@
+.Body,
+.List {
+  margin-top: 40px;
+  @include desktop {
+    margin-top: 60px;
+  }
+}
+
+.List {
+
+  &_title {
+    display: flex;
+    font-size: toRem(20px);
+    margin-bottom: 20px;
+    font-family: $font-title;
+    color: $color-purple;
+    letter-spacing: 1px;
+    a {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &--search {
+      color: $color-shadow;
+      letter-spacing: 0;
+    }
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
+
+  &-more {
+    float: right;
+    background-color: $color-purple;
+    letter-spacing: 1px;
+    font-size: .875rem;
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.5;
+    transition-duration: 100ms;
+    box-shadow: 0 1px 0 rgb(59, 30, 86);
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.Shards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+.Shard {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  @include desktop {
+    width: $Shard-width;
+  }
+
+  &-content {
+    margin: 15px $padding;
+  }
+
+  &_version {
+    font-size: 0.7em;
+    line-height: 1.25em;
+    opacity: 0.6;
+  }
+
+  &_title {
+    font-size: toRem(20px);
+    color: $color-purple;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &_desc {
+    line-height: 1.3;
+    margin-top: 5px;
+    color: $color-ligth;
+    font-size: toRem(15px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-meta {
+    position: relative;
+    padding: 10px $padding;
+    color: $color-smoke;
+    font-size: toRem(14px);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: $padding;
+      right: $padding;
+      height: 1px;
+      background-color: #eee;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      margin-right: 20px;
+      white-space: nowrap;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+
+        .Shard:hover & {
+          color: $color-ligth;
+        }
+
+        .Shard:hover &:hover {
+          color: $color-text;
+        }
+
+        img {
+          margin-right: 5px;
+        }
+
+        svg {
+          font-size: 18px;
+          margin-right: 2px;
+        }
+
+      }
+    }
+
+    &_author {
+      img {
+        width: 20px;
+        border-radius: 50%;
+      }
+    }
+
+  }
+
+}
+
+.Pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &-container {
+    display: flex;
+    width: $Shard-width;
+
+    &.prev {
+      justify-content: flex-end;
+    }
+
+    &.next {
+      justify-content: flex-start;
+    }
+  }
+
+  &_link {
+    line-height: 32px;
+    padding-left: $padding;
+    padding-right: $padding;
+    color: $color-purple;
+    border: 1px solid $color-purple;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+
+    &:hover {
+      color: white;
+      background-color: $color-purple;
+    }
+
+    &.isDisable {
+      opacity: .3;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+  }
+}
+
+.Alert {
+  text-align: center;
+
+  &_title {
+    font-family: $font-title;
+    color: $color-purple;
+    font-size: toRem(24px);
+  }
+
+  &_desc {
+    margin-top: 10px;
+    b {
+      font-weight: 500;
+    }
+  }
+
+  .init {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 8px 20px;
+    color: darken($color-purple, 20);
+    background-color: rgba($color-purple, .2);
+    border-radius: $border-radius;
+
+    &._big {
+      font-size: 1.4em;
+    }
+
+    &._small {
+      font-size: .8em;
+      margin-top: 10px;
+      background-color: rgba($color-purple, .1);
+    }
+
+    code {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 100%;
+        width: 3px;
+        margin-left: 2px;
+        height: 120%;
+        background-color: $color-purple;
+        animation: blink .6s infinite alternate;
+      }
+    }
+  }
+
+}
+
+.Divider {
+  width: 20%;
+  margin: 40px auto;
+  border-width: 0 0 1px 0;
+  border-color: #ddd;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

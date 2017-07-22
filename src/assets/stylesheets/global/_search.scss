@@ -1,0 +1,28 @@
+.Search {
+  margin-top: 30px;
+
+  form {
+    position: relative;
+  }
+
+  &_input {
+    display: block;
+    width: 100%;
+    height: $Search-height;
+    padding-left: $padding;
+    padding-right: 60px;
+    border: 0;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+  }
+
+  .icon {
+    font-size: 25px;
+    color: rgba($color-purple, .4);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}

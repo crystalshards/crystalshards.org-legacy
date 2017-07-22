@@ -1,3 +1,5 @@
+{% run "./sass-compile", "assets/stylesheets", "../public/assets/stylesheets" %}
+
 require "amber"
 require "./controllers/**"
 require "./mailers/**"

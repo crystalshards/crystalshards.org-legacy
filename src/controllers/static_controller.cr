@@ -1,5 +1,5 @@
-class StaticController < ApplicationController 
+class StaticController < ApplicationController
   def index
-    "do nothing"
+    ""
   end
 end

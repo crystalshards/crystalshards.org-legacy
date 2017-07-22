@@ -1,0 +1,33 @@
+.Header {
+  color: white;
+  background-color: $color-purple;
+
+  .width {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $Header-height;
+  }
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+  font-family: $font-title;
+  font-size: toRem(30px);
+  letter-spacing: -0.02em;
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.all-list {
+  opacity: .8;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
