@@ -14,7 +14,9 @@ clusters:
     context: gke_waldrip-net_us-central1-a_waldrip-net
 ingress:
   tls: true
-  host: crystalshards.org
+  hosts: 
+    - crystalshards.org
+    - crystalshards.xyz
   annotations:
     ingress.kubernetes.io/force-ssl-redirect: "true"
 healthcheck:
