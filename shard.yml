@@ -1,7 +1,9 @@
 name: crystalshards
 version: 0.2.0
-author: Fatih Kadir Akın
-crystal: 0.22.0
+authors: 
+  - Fatih Kadir Akın
+  - Jason Waldrip <jason@waldrip.net>
+crystal: 0.34.0
 
 targets:
   web:
