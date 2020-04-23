@@ -32,4 +32,7 @@ RUN rm `which shards`
 RUN mkdir /workdir
 WORKDIR /workdir
 
+# Default port
+ENV PORT 5000
+
 ENTRYPOINT [ "/usr/local/bin/web" ]
