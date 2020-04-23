@@ -105,4 +105,7 @@ get "/:user/:repo" do |env|
   env.redirect("https://github.com/#{env.params.url["user"]}/#{env.params.url["repo"]}")
 end
 
+ENV["PORT"] ||= "3000"
+Kemal.config.port = ENV["PORT"].to_i
+
 Kemal.run
