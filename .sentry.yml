@@ -1,0 +1,6 @@
+build: shards build web --local
+install_shards: true
+run: ./bin/web
+watch:
+  - ./src/**/*.cr
+  - ./src/**/*.ecr

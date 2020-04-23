@@ -23,3 +23,8 @@ dependencies:
     github: askn/faker
   baked_file_system:
     github: schovi/baked_file_system
+
+development_dependencies:
+  sentry:
+    github: Acciaiodigitale/sentry
+    branch: develop

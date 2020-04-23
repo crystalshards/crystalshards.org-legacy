@@ -30,9 +30,13 @@ shards:
 
   promise:
     github: jwaldrip/promise.cr
-    version: 1.0.0
+    version: 2.0.0
 
   radix:
     github: luislavena/radix
     version: 0.3.9
+
+  sentry:
+    github: Acciaiodigitale/sentry
+    commit: 5ba3ace2a1c2ab8ea55cd4a89a663bec4f21f75a
 
