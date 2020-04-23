@@ -75,7 +75,8 @@ def main(env, query = "")
   recently = RECENTLY_CACHE.fetch(sort + query) { crystal_repos(query, :updated, 1, 6) }
 
   total = all_repos.not_nil!.total_count
-  Views::Index.new total, repos, trending, popular, recently, sort, filter, page, env.params
+  view = Views::Index.new total, repos, trending, popular, recently, sort, filter, page, env.params
+  view.to_s
 end
 
 get "/" do |env|
