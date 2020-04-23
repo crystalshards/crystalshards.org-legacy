@@ -14,10 +14,9 @@ dependencies:
     github: jwaldrip/mime-types.cr
   kemal:
     github: sdogruyol/kemal
-    version: 0.19.0
   emoji:
     github: veelenga/emoji.cr
-    version: 0.2.0
+    branch: master
   faker:
     github: askn/faker
   baked_file_system:

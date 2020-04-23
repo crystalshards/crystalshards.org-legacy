@@ -27,7 +27,7 @@ struct TimeCache(K, V)
   end
 
   private def now
-    now = Time.utc_now
+    now = Time.utc
   end
 
   struct Entry(V)

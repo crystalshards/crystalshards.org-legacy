@@ -25,7 +25,7 @@ class Views::Index
 
     @sort = sort
     @filter = filter
-    @now = Time.utc_now
+    @now = Time.utc
   end
 
   def human_time(time)
