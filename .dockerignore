@@ -3,6 +3,7 @@
 !package.json
 !shard.yml
 !shard.lock
+!yarn.lock
 !src/*
 !assets/*
 !static/*

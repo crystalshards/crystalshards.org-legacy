@@ -1,20 +1,23 @@
 FROM crystallang/crystal:0.34.0
+SHELL ["bash", "-c"]
 
 # Deps
 ENV NPM_CONFIG_LOGLEVEL warn
 RUN apt-get update
 RUN apt-get install curl -y
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install nodejs -y
 WORKDIR /build
-ADD gulpfile.js package.json shard.yml shard.lock /build/
+ADD gulpfile.js package.json shard.yml shard.lock ./
 RUN shards install
-RUN npm install
+RUN npm i -g yarn
+COPY package.json yarn.lock ./
+RUN yarn install
 
 # Build
-COPY ./assets /build/assets
-RUN npm run build
-COPY . /build
+COPY ./assets ./assets
+RUN yarn build
+COPY . ./
 RUN shards build --release
 RUN mv ./bin/web /usr/local/bin/web
 
